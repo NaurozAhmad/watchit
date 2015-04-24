@@ -1,4 +1,4 @@
 hello to GitHub...Web Team
-please put all your work in Android Folder
+please put all your work in WebFolder
 samiurrahman99/watchit/Web
 
