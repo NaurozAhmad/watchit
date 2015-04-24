@@ -1,4 +1,3 @@
 hello to GitHub...Core Team
-please put all your work in Android Folder
+please put all your work in Core Folder
 samiurrahman99/watchit/Core
-
