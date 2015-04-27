@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="5dip"
+    android:background="#ff89dad9">
+
+    <ImageView
+        android:id="@+id/header"
+        android:src="@drawable/drawer5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/icons"
+        style="@android:style/Animation"
+        android:clickable="true" />
+
+<ImageView
+    android:layout_marginLeft="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/logo"
+    android:src="@drawable/lpic6"
+    />
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:textSize="20sp"
+        android:paddingRight="5dip"
+        android:textColor="#ff4ca0aa" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right|center_vertical"
+        android:paddingRight="5dip">
+        <ImageView
+            android:id="@+id/share"
+
+            android:foreground="#000000"
+            android:layout_width="25dp"
+            android:layout_height="40dp"
+
+            android:contentDescription="@string/icon"
+            android:background="@android:drawable/ic_menu_share" />
+        <SearchView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp" >
+
+        </SearchView>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
