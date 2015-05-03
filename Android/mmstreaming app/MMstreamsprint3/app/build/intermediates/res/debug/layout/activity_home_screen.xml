@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/c"
+    tools:context=".HomeScreen" >
+
+    <ImageView
+        android:id="@+id/main"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/black"
+        android:contentDescription="@string/desc"
+        android:src="@drawable/video" />
+
+    <ImageView
+        android:id="@+id/side1"
+        android:layout_width="100dp"
+        android:layout_height="85dp"
+        android:layout_alignTop="@+id/main"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@+id/main"
+        android:background="@android:color/black"
+        android:src="@drawable/video" />
+
+    <ImageView
+        android:id="@+id/side2"
+        android:layout_width="100dp"
+        android:layout_height="85dp"
+        android:layout_alignBottom="@+id/main"
+        android:layout_alignLeft="@+id/side1"
+        android:background="@android:color/black"
+        android:src="@drawable/video" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Title Goes Here....!"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/side1"
+        android:layout_alignTop="@+id/side1"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/side2"
+        android:layout_alignTop="@+id/side2"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Outerlayout"
+        android:layout_alignLeft="@+id/main"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/side2"
+        android:layout_below="@+id/main"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/C:/Users/iqbal/AndroidStudioProjects/MMstreamsprint3/app/src/main/res/layout/activity_home_screen.xml -->
