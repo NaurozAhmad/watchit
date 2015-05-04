@@ -1,0 +1,69 @@
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:background="@drawable/c"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        
+        <LinearLayout
+				    android:layout_width="match_parent"
+				    android:layout_height="match_parent"
+				    android:orientation="vertical" >
+				
+				    <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal" >
+				        
+				        <ImageView
+				        android:id="@+id/main"
+				        android:layout_width="200dp"
+				        android:layout_height="180dp"
+				        android:layout_marginLeft="6dp"
+				        android:layout_marginTop="6dp"
+				        android:background="@android:color/black"
+				        android:contentDescription="@string/desc"
+				        android:src="@drawable/video" />
+				        
+				        <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="vertical"
+				        android:layout_marginLeft="6dp"
+				        android:layout_marginTop="6dp"
+				         >
+				        	
+				            <ImageView
+						        android:id="@+id/side1"
+						        android:layout_width="95dp"
+						        android:layout_height="85dp"
+						        android:background="@android:color/black"
+						        android:src="@drawable/video" />
+				            
+				            
+				            <ImageView
+						        android:id="@+id/side2"
+						        android:layout_width="95dp"
+						        android:layout_height="90dp"
+						        android:layout_marginTop="6dp"
+						        android:background="@android:color/black"
+						        android:src="@drawable/video" />
+				            
+				        </LinearLayout>
+				        
+				        
+				        
+				    </LinearLayout>
+				    
+				    <LinearLayout
+				        android:layout_width="305dp"
+				        android:layout_height="wrap_content"
+				        android:id="@+id/Outerlayout"
+				        android:orientation="vertical"
+				        android:layout_marginLeft="6dp" >
+				
+				    </LinearLayout>
+				
+				</LinearLayout>
+
+    </ScrollView>
