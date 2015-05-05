@@ -1,3 +1,2 @@
-hello to GitHub...Android Team
-please put all your work in Android Folder
-samiurrahman99/watchit/Android
+use API 17, add support v4 library
+Regards IQBAL AHMAD
