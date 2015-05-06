@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>mainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(0,0,255); }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+mainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">mmstreaming.mmstreaming; 
+ 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.view.Menu; 
+</span><span class="s0">import </span><span class="s1">android.view.MenuItem; 
+</span><span class="s0">import static </span><span class="s1">mmstreaming.mmstreaming.R.id.content_frame; 
+ 
+</span><span class="s0">public class </span><span class="s1">mainActivity </span><span class="s0">extends <a href="AbstractNavDrawerActivity.java.html">AbstractNavDrawerActivity</a> </span><span class="s1">{ 
+ 
+ 
+ 
+    @Override 
+ 
+        </span><span class="s0">protected <a href="NavDrawerActivityConfiguration.java.html">NavDrawerActivityConfiguration</a> </span><span class="s1">getNavDrawerConfiguration() { 
+            <a href="NavDrawerItem.java.html">NavDrawerItem</a>[] menu = </span><span class="s0">new <a href="NavDrawerItem.java.html">NavDrawerItem</a></span><span class="s1">[] { 
+                <a href="NavProfile.java.html">NavProfile</a>.create(</span><span class="s2">100</span><span class="s1">,</span><span class="s3">&quot;SignIn&quot;</span><span class="s1">,</span><span class="s3">&quot;@drawable/signin&quot;</span><span class="s1">,</span><span class="s0">true</span><span class="s1">,</span><span class="s0">this</span><span class="s1">), 
+                    <a href="NavMenuItem.java.html">NavMenuItem</a>.create(</span><span class="s2">200</span><span class="s1">,</span><span class="s3">&quot;MostRated&quot;</span><span class="s1">,</span><span class="s3">&quot;@drawable/ic_launcher&quot;</span><span class="s1">,</span><span class="s0">true</span><span class="s1">,</span><span class="s0">this</span><span class="s1">), 
+                <a href="NavMenuSection.java.html">NavMenuSection</a>.create( </span><span class="s2">300</span><span class="s1">, </span><span class="s3">&quot;Categories&quot;</span><span class="s1">), 
+ 
+                    <a href="NavMenuItem.java.html">NavMenuItem</a>.create(</span><span class="s2">301</span><span class="s1">, </span><span class="s3">&quot;Entertainment&quot;</span><span class="s1">, </span><span class="s3">&quot;@drawable/entertainment&quot;</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">this</span><span class="s1">), 
+                    <a href="NavMenuItem.java.html">NavMenuItem</a>.create(</span><span class="s2">302</span><span class="s1">, </span><span class="s3">&quot;Sports&quot;</span><span class="s1">, </span><span class="s3">&quot;@drawable/sports&quot;</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">this</span><span class="s1">), 
+                    <a href="NavMenuItem.java.html">NavMenuItem</a>.create(</span><span class="s2">303</span><span class="s1">, </span><span class="s3">&quot;Horror&quot;</span><span class="s1">, </span><span class="s3">&quot;@drawable/ic_launcher&quot;</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">this</span><span class="s1">), 
+                    <a href="NavMenuItem.java.html">NavMenuItem</a>.create(</span><span class="s2">304</span><span class="s1">, </span><span class="s3">&quot;Islamic&quot;</span><span class="s1">, </span><span class="s3">&quot;@drawable/islamic&quot;</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">this</span><span class="s1">), 
+                    <a href="NavMenuItem.java.html">NavMenuItem</a>.create(</span><span class="s2">305</span><span class="s1">, </span><span class="s3">&quot;Dramas&quot;</span><span class="s1">, </span><span class="s3">&quot;@drawable/dramas&quot;</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">this</span><span class="s1">), 
+                    <a href="NavMenuItem.java.html">NavMenuItem</a>.create(</span><span class="s2">306</span><span class="s1">, </span><span class="s3">&quot;Animated&quot;</span><span class="s1">, </span><span class="s3">&quot;@drawable/animated&quot;</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">this</span><span class="s1">), 
+                <a href="NavMenuSection.java.html">NavMenuSection</a>.create(</span><span class="s2">400</span><span class="s1">, </span><span class="s3">&quot;Others&quot;</span><span class="s1">), 
+ 
+                   <a href="NavMenuItem.java.html">NavMenuItem</a>.create(</span><span class="s2">401</span><span class="s1">, </span><span class="s3">&quot;SignOut&quot;</span><span class="s1">, </span><span class="s3">&quot;@drawable/ic_launcher&quot;</span><span class="s1">, </span><span class="s0">true</span><span class="s1">, </span><span class="s0">this</span><span class="s1">)}; 
+ 
+ 
+ 
+ 
+            <a href="NavDrawerActivityConfiguration.java.html">NavDrawerActivityConfiguration</a> navDrawerActivityConfiguration = </span><span class="s0">new <a href="NavDrawerActivityConfiguration.java.html">NavDrawerActivityConfiguration</a></span><span class="s1">(); 
+            navDrawerActivityConfiguration.setMainLayout(R.layout.activity_main); 
+            navDrawerActivityConfiguration.setDrawerLayoutId(R.id.drawer_layout); 
+            navDrawerActivityConfiguration.setLeftDrawerId(R.id.left_drawer); 
+            navDrawerActivityConfiguration.setNavItems(menu); 
+            navDrawerActivityConfiguration.setDrawerShadow(R.drawable.drawer_shadow); 
+            navDrawerActivityConfiguration.setDrawerOpenDesc(R.string.drawer_open); 
+            navDrawerActivityConfiguration.setDrawerCloseDesc(R.string.drawer_close); 
+            navDrawerActivityConfiguration.setBaseAdapter( 
+                    </span><span class="s0">new <a href="NavDrawerAdapter.java.html">NavDrawerAdapter</a></span><span class="s1">(</span><span class="s0">this</span><span class="s1">, R.layout.navdraweritem, menu )); 
+            </span><span class="s0">return </span><span class="s1">navDrawerActivityConfiguration; 
+        } 
+ 
+ 
+ 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onNavItemSelected(</span><span class="s0">int </span><span class="s1">id) { 
+        </span><span class="s0">switch </span><span class="s1">((</span><span class="s0">int</span><span class="s1">)id) { 
+            </span><span class="s0">case </span><span class="s2">100</span><span class="s1">: 
+                getSupportFragmentManager().beginTransaction().replace(content_frame, </span><span class="s0">new <a href="SignIn.java.html">SignIn</a></span><span class="s1">()).commit(); 
+                </span><span class="s0">break</span><span class="s1">; 
+            </span><span class="s0">case </span><span class="s2">200</span><span class="s1">: 
+                getSupportFragmentManager().beginTransaction().replace(content_frame, </span><span class="s0">new <a href="MostRated.java.html">MostRated</a></span><span class="s1">()).commit(); 
+                </span><span class="s0">break</span><span class="s1">; 
+            </span><span class="s0">case </span><span class="s2">301</span><span class="s1">: 
+                getSupportFragmentManager().beginTransaction().replace(content_frame, </span><span class="s0">new <a href="Entertainment.java.html">Entertainment</a></span><span class="s1">()).commit(); 
+                </span><span class="s0">break</span><span class="s1">; 
+            </span><span class="s0">case </span><span class="s2">302</span><span class="s1">: 
+                getSupportFragmentManager().beginTransaction().replace(content_frame, </span><span class="s0">new <a href="Sports.java.html">Sports</a></span><span class="s1">()).commit(); 
+                </span><span class="s0">break</span><span class="s1">; 
+            </span><span class="s0">case </span><span class="s2">303</span><span class="s1">: 
+                getSupportFragmentManager().beginTransaction().replace(content_frame, </span><span class="s0">new <a href="Horror.java.html">Horror</a></span><span class="s1">()).commit(); 
+                </span><span class="s0">break</span><span class="s1">; 
+            </span><span class="s0">case </span><span class="s2">304</span><span class="s1">: 
+                getSupportFragmentManager().beginTransaction().replace(content_frame, </span><span class="s0">new <a href="Islamic.java.html">Islamic</a></span><span class="s1">()).commit(); 
+                </span><span class="s0">break</span><span class="s1">; 
+            </span><span class="s0">case </span><span class="s2">305</span><span class="s1">: 
+                getSupportFragmentManager().beginTransaction().replace(content_frame, </span><span class="s0">new <a href="Dramas.java.html">Dramas</a></span><span class="s1">()).commit(); 
+                </span><span class="s0">break</span><span class="s1">; 
+            </span><span class="s0">case </span><span class="s2">306</span><span class="s1">: 
+                getSupportFragmentManager().beginTransaction().replace(content_frame, </span><span class="s0">new <a href="Animated.java.html">Animated</a></span><span class="s1">()).commit(); 
+                </span><span class="s0">break</span><span class="s1">; 
+ 
+        } 
+    } 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        </span><span class="s4">//  setContentView(R.layout.activity_main);</span><span class="s1"> 
+        </span><span class="s0">if </span><span class="s1">(savedInstanceState == </span><span class="s0">null</span><span class="s1">) { 
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, </span><span class="s0">new <a href="home.java.html">home</a></span><span class="s1">()).commit(); 
+        } 
+    } 
+ 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onCreateOptionsMenu(Menu menu) { 
+        </span><span class="s4">// Inflate the menu; this adds items to the action bar if it is present.</span><span class="s1"> 
+        getMenuInflater().inflate(R.menu.main, menu); 
+        </span><span class="s0">return true</span><span class="s1">; 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onOptionsItemSelected(MenuItem item) { 
+        </span><span class="s4">// Handle action bar item clicks here. The action bar will</span><span class="s1"> 
+        </span><span class="s4">// automatically handle clicks on the Home/Up button, so long</span><span class="s1"> 
+        </span><span class="s4">// as you specify a parent activity in AndroidManifest.xml.</span><span class="s1"> 
+        </span><span class="s0">int </span><span class="s1">id = item.getItemId(); 
+       </span><span class="s0">if </span><span class="s1">(id == R.id.action_search) { 
+       </span><span class="s0">return true</span><span class="s1">; 
+       } 
+        </span><span class="s0">return super</span><span class="s1">.onOptionsItemSelected(item); 
+    } 
+} 
+</span></pre>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>NavMenuSection.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+NavMenuSection.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">mmstreaming.mmstreaming; 
+ 
+</span><span class="s2">/** 
+ * Created by Ammo on 5/2/2015. 
+ */</span><span class="s1"> 
+</span><span class="s0">public class </span><span class="s1">NavMenuSection </span><span class="s0">implements <a href="NavDrawerItem.java.html">NavDrawerItem</a> </span><span class="s1">{ 
+    </span><span class="s0">public static final int </span><span class="s1">SECTION_TYPE = </span><span class="s3">0</span><span class="s1">; 
+    </span><span class="s0">private int </span><span class="s1">id; 
+    </span><span class="s0">private </span><span class="s1">String label; 
+ 
+    </span><span class="s0">private </span><span class="s1">NavMenuSection() { 
+    } 
+ 
+    </span><span class="s0">public static </span><span class="s1">NavMenuSection create( </span><span class="s0">int </span><span class="s1">id, String label ) { 
+        NavMenuSection section = </span><span class="s0">new </span><span class="s1">NavMenuSection(); 
+        section.setLabel(label); 
+        </span><span class="s0">return </span><span class="s1">section; 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public int </span><span class="s1">getType() { 
+        </span><span class="s0">return </span><span class="s1">SECTION_TYPE; 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">String getLabel() { 
+        </span><span class="s0">return </span><span class="s1">label; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setLabel(String label) { 
+        </span><span class="s0">this</span><span class="s1">.label = label; 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">isEnabled() { 
+        </span><span class="s0">return false</span><span class="s1">; 
+    } 
+ 
+    </span><span class="s0">public int </span><span class="s1">getId() { 
+        </span><span class="s0">return </span><span class="s1">id; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setId(</span><span class="s0">int </span><span class="s1">id) { 
+        </span><span class="s0">this</span><span class="s1">.id = id; 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">updateActionBarTitle() { 
+        </span><span class="s0">return false</span><span class="s1">; 
+    } 
+ 
+ 
+} 
+</span></pre>
+</body>
+</html>

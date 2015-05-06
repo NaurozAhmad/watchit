@@ -1,0 +1,51 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="mmstreaming.mmstreaming.mainActivity2" >
+    <item android:id="@+id/action_search"
+        android:orderInCategory="100"
+        android:title="Search"
+        android:icon="@drawable/ic_action_search"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:actionViewClass="android.widget.SearchView" />
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+
+        android:icon="@drawable/ic_action_share"
+        android:title="Share">
+        <menu>
+
+            <!-- Refresh -->
+            <item
+                android:id="@+id/Messenger"
+                android:icon="@drawable/ic_action_refresh"
+                android:showAsAction="ifRoom"
+                android:title="@string/Messenger"/>
+
+            <!-- Help -->
+            <item
+                android:id="@+id/Viber"
+                android:icon="@drawable/viber"
+                android:showAsAction="never"
+                android:title="@string/Viber"/>
+
+            <!-- Check updates -->
+            <item
+                android:id="@+id/Facebook"
+                android:icon="@drawable/faebook"
+                android:showAsAction="never"
+                android:title="@string/Facebook"/>
+            <item
+                android:id="@+id/Whatsapp"
+                android:icon="@drawable/whatsapp"
+                android:showAsAction="never"
+                android:title="@string/Whatsapp"/>
+            <item
+                android:id="@+id/Gmail"
+                android:icon="@drawable/gmail"
+                android:showAsAction="never"
+                android:title="@string/Gmail"/>
+        </menu>
+    </item>
+</menu>

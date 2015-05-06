@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>main_activity2.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { }
+.s1 { color: rgb(0,0,128); font-weight: bold; }
+.s2 { color: rgb(0,0,255); font-weight: bold; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+main_activity2.xml</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">&lt;</span><span class="s1">menu </span><span class="s2">xmlns:android=</span><span class="s3">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="s0"> 
+    </span><span class="s2">xmlns:tools=</span><span class="s3">&quot;http://schemas.android.com/tools&quot;</span><span class="s0"> 
+    </span><span class="s2">tools:context=</span><span class="s3">&quot;mmstreaming.mmstreaming.mainActivity2&quot; </span><span class="s0">&gt; 
+    &lt;</span><span class="s1">item </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/action_search&quot;</span><span class="s0"> 
+        </span><span class="s2">android:orderInCategory=</span><span class="s3">&quot;100&quot;</span><span class="s0"> 
+        </span><span class="s2">android:title=</span><span class="s3">&quot;Search&quot;</span><span class="s0"> 
+        </span><span class="s2">android:icon=</span><span class="s3">&quot;@drawable/ic_action_search&quot;</span><span class="s0"> 
+        </span><span class="s2">android:showAsAction=</span><span class="s3">&quot;ifRoom|collapseActionView&quot;</span><span class="s0"> 
+        </span><span class="s2">android:actionViewClass=</span><span class="s3">&quot;android.widget.SearchView&quot; </span><span class="s0">/&gt; 
+    &lt;</span><span class="s1">item</span><span class="s0"> 
+        </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/action_share&quot;</span><span class="s0"> 
+        </span><span class="s2">android:orderInCategory=</span><span class="s3">&quot;100&quot;</span><span class="s0"> 
+        </span><span class="s2">android:showAsAction=</span><span class="s3">&quot;always&quot;</span><span class="s0"> 
+ 
+        </span><span class="s2">android:icon=</span><span class="s3">&quot;@drawable/ic_action_share&quot;</span><span class="s0"> 
+        </span><span class="s2">android:title=</span><span class="s3">&quot;Share&quot;</span><span class="s0">&gt; 
+        &lt;</span><span class="s1">menu</span><span class="s0">&gt; 
+ 
+            </span><span class="s4">&lt;!-- Refresh --&gt;</span><span class="s0"> 
+            &lt;</span><span class="s1">item</span><span class="s0"> 
+                </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/Messenger&quot;</span><span class="s0"> 
+                </span><span class="s2">android:icon=</span><span class="s3">&quot;@drawable/ic_action_refresh&quot;</span><span class="s0"> 
+                </span><span class="s2">android:showAsAction=</span><span class="s3">&quot;ifRoom&quot;</span><span class="s0"> 
+                </span><span class="s2">android:title=</span><span class="s3">&quot;@string/Messenger&quot;</span><span class="s0">/&gt; 
+ 
+            </span><span class="s4">&lt;!-- Help --&gt;</span><span class="s0"> 
+            &lt;</span><span class="s1">item</span><span class="s0"> 
+                </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/Viber&quot;</span><span class="s0"> 
+                </span><span class="s2">android:icon=</span><span class="s3">&quot;@drawable/viber&quot;</span><span class="s0"> 
+                </span><span class="s2">android:showAsAction=</span><span class="s3">&quot;never&quot;</span><span class="s0"> 
+                </span><span class="s2">android:title=</span><span class="s3">&quot;@string/Viber&quot;</span><span class="s0">/&gt; 
+ 
+            </span><span class="s4">&lt;!-- Check updates --&gt;</span><span class="s0"> 
+            &lt;</span><span class="s1">item</span><span class="s0"> 
+                </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/Facebook&quot;</span><span class="s0"> 
+                </span><span class="s2">android:icon=</span><span class="s3">&quot;@drawable/faebook&quot;</span><span class="s0"> 
+                </span><span class="s2">android:showAsAction=</span><span class="s3">&quot;never&quot;</span><span class="s0"> 
+                </span><span class="s2">android:title=</span><span class="s3">&quot;@string/Facebook&quot;</span><span class="s0">/&gt; 
+            &lt;</span><span class="s1">item</span><span class="s0"> 
+                </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/Whatsapp&quot;</span><span class="s0"> 
+                </span><span class="s2">android:icon=</span><span class="s3">&quot;@drawable/whatsapp&quot;</span><span class="s0"> 
+                </span><span class="s2">android:showAsAction=</span><span class="s3">&quot;never&quot;</span><span class="s0"> 
+                </span><span class="s2">android:title=</span><span class="s3">&quot;@string/Whatsapp&quot;</span><span class="s0">/&gt; 
+            &lt;</span><span class="s1">item</span><span class="s0"> 
+                </span><span class="s2">android:id=</span><span class="s3">&quot;@+id/Gmail&quot;</span><span class="s0"> 
+                </span><span class="s2">android:icon=</span><span class="s3">&quot;@drawable/gmail&quot;</span><span class="s0"> 
+                </span><span class="s2">android:showAsAction=</span><span class="s3">&quot;never&quot;</span><span class="s0"> 
+                </span><span class="s2">android:title=</span><span class="s3">&quot;@string/Gmail&quot;</span><span class="s0">/&gt; 
+        &lt;/</span><span class="s1">menu</span><span class="s0">&gt; 
+    &lt;/</span><span class="s1">item</span><span class="s0">&gt; 
+&lt;/</span><span class="s1">menu</span><span class="s0">&gt; 
+</span></pre>
+</body>
+</html>

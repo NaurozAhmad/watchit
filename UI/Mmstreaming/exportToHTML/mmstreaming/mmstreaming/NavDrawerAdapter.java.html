@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>NavDrawerAdapter.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+NavDrawerAdapter.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">mmstreaming.mmstreaming; 
+ 
+</span><span class="s0">import </span><span class="s1">android.content.Context; 
+</span><span class="s0">import </span><span class="s1">android.view.LayoutInflater; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.view.ViewGroup; 
+</span><span class="s0">import </span><span class="s1">android.widget.ArrayAdapter; 
+</span><span class="s0">import </span><span class="s1">android.widget.ImageView; 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView; 
+ 
+</span><span class="s2">/** 
+ * Created by Ammo on 5/2/2015. 
+ */</span><span class="s1"> 
+</span><span class="s0">public class </span><span class="s1">NavDrawerAdapter </span><span class="s0">extends </span><span class="s1">ArrayAdapter&lt;NavDrawerItem&gt; { 
+    </span><span class="s0">private </span><span class="s1">LayoutInflater inflater; 
+ 
+    </span><span class="s0">public </span><span class="s1">NavDrawerAdapter(Context context, </span><span class="s0">int </span><span class="s1">textViewResourceId, <a href="NavDrawerItem.java.html">NavDrawerItem</a>[] objects ) { 
+        </span><span class="s0">super</span><span class="s1">(context, textViewResourceId, objects); 
+        </span><span class="s0">this</span><span class="s1">.inflater = LayoutInflater.from(context); 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public </span><span class="s1">View getView(</span><span class="s0">int </span><span class="s1">position, View convertView, ViewGroup parent) { 
+        View view =</span><span class="s0">null </span><span class="s1">; 
+        <a href="NavDrawerItem.java.html">NavDrawerItem</a> menuItem = </span><span class="s0">this</span><span class="s1">.getItem(position); 
+        </span><span class="s0">if</span><span class="s1">(menuItem.getType()== <a href="NavProfile.java.html">NavProfile</a>.PROFILE_TYPE){ 
+            view = getProfileView(convertView, parent, menuItem ); 
+        } 
+        </span><span class="s0">else if </span><span class="s1">( menuItem.getType() == <a href="NavMenuItem.java.html">NavMenuItem</a>.ITEM_TYPE ) { 
+            view = getItemView(convertView, parent, menuItem ); 
+       } 
+ 
+        </span><span class="s0">else </span><span class="s1">{ 
+            view = getSectionView(convertView, parent, menuItem); 
+        } 
+        </span><span class="s0">return </span><span class="s1">view ; 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">View getItemView( View convertView, ViewGroup parentView, <a href="NavDrawerItem.java.html">NavDrawerItem</a> navDrawerItem ) { 
+ 
+        <a href="NavMenuItem.java.html">NavMenuItem</a> menuItem = (<a href="NavMenuItem.java.html">NavMenuItem</a>) navDrawerItem ; 
+        NavMenuItemHolder navMenuItemHolder = </span><span class="s0">null</span><span class="s1">; 
+ 
+        </span><span class="s0">if </span><span class="s1">(convertView == </span><span class="s0">null</span><span class="s1">) { 
+            convertView = inflater.inflate( R.layout.navdraweritem, parentView, </span><span class="s0">false</span><span class="s1">); 
+            TextView labelView = (TextView) convertView 
+                    .findViewById( R.id.navmenuitem_label ); 
+            ImageView iconView = (ImageView) convertView 
+                    .findViewById( R.id.navmenuitem_icon ); 
+ 
+            navMenuItemHolder = </span><span class="s0">new </span><span class="s1">NavMenuItemHolder(); 
+            navMenuItemHolder.labelView = labelView ; 
+            navMenuItemHolder.iconView = iconView ; 
+ 
+            convertView.setTag(navMenuItemHolder); 
+        } 
+ 
+        </span><span class="s0">if </span><span class="s1">( navMenuItemHolder == </span><span class="s0">null </span><span class="s1">) { 
+            navMenuItemHolder = (NavMenuItemHolder) convertView.getTag(); 
+        } 
+ 
+        navMenuItemHolder.labelView.setText(menuItem.getLabel()); 
+        navMenuItemHolder.iconView.setImageResource(menuItem.getIcon()); 
+ 
+        </span><span class="s0">return </span><span class="s1">convertView ; 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">View getProfileView( View convertView, ViewGroup parentView, <a href="NavDrawerItem.java.html">NavDrawerItem</a> navDrawerItem ) { 
+ 
+        <a href="NavProfile.java.html">NavProfile</a> menuProfile = (<a href="NavProfile.java.html">NavProfile</a>) navDrawerItem ; 
+        NavProfileHolder navMenuItemHolder = </span><span class="s0">null</span><span class="s1">; 
+ 
+        </span><span class="s0">if </span><span class="s1">(convertView == </span><span class="s0">null</span><span class="s1">) { 
+            convertView = inflater.inflate( R.layout.navprofile, parentView, </span><span class="s0">false</span><span class="s1">); 
+            TextView labelView = (TextView) convertView 
+                    .findViewById( R.id.nav_profile ); 
+            ImageView iconView = (ImageView) convertView 
+                    .findViewById( R.id.avatar ); 
+ 
+            navMenuItemHolder = </span><span class="s0">new </span><span class="s1">NavProfileHolder(); 
+            navMenuItemHolder.labelView = labelView ; 
+            navMenuItemHolder.iconView = iconView ; 
+ 
+            convertView.setTag(navMenuItemHolder); 
+        } 
+ 
+        </span><span class="s0">if </span><span class="s1">( navMenuItemHolder == </span><span class="s0">null </span><span class="s1">) { 
+            navMenuItemHolder = (NavProfileHolder) convertView.getTag(); 
+        } 
+ 
+        navMenuItemHolder.labelView.setText(menuProfile.getLabel()); 
+        navMenuItemHolder.iconView.setImageResource(menuProfile.getIcon()); 
+ 
+        </span><span class="s0">return </span><span class="s1">convertView ; 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">View getSectionView(View convertView, ViewGroup parentView, 
+                               <a href="NavDrawerItem.java.html">NavDrawerItem</a> navDrawerItem) { 
+ 
+        <a href="NavMenuSection.java.html">NavMenuSection</a> menuSection = (<a href="NavMenuSection.java.html">NavMenuSection</a>) navDrawerItem ; 
+        NavMenuSectionHolder navMenuItemHolder = </span><span class="s0">null</span><span class="s1">; 
+ 
+        </span><span class="s0">if </span><span class="s1">(convertView == </span><span class="s0">null</span><span class="s1">) { 
+            convertView = inflater.inflate( R.layout.navdrawer_section, parentView, </span><span class="s0">false</span><span class="s1">); 
+            TextView labelView = (TextView) convertView 
+                    .findViewById( R.id.navmenusection_label ); 
+ 
+            navMenuItemHolder = </span><span class="s0">new </span><span class="s1">NavMenuSectionHolder(); 
+            navMenuItemHolder.labelView = labelView ; 
+            convertView.setTag(navMenuItemHolder); 
+        } 
+ 
+        </span><span class="s0">if </span><span class="s1">( navMenuItemHolder == </span><span class="s0">null </span><span class="s1">) { 
+            navMenuItemHolder = (NavMenuSectionHolder) convertView.getTag(); 
+        } 
+ 
+        navMenuItemHolder.labelView.setText(menuSection.getLabel()); 
+ 
+        </span><span class="s0">return </span><span class="s1">convertView ; 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public int </span><span class="s1">getViewTypeCount() { 
+        </span><span class="s0">return </span><span class="s3">3</span><span class="s1">; 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public int </span><span class="s1">getItemViewType(</span><span class="s0">int </span><span class="s1">position) { 
+        </span><span class="s0">return this</span><span class="s1">.getItem(position).getType(); 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">isEnabled(</span><span class="s0">int </span><span class="s1">position) { 
+        </span><span class="s0">return </span><span class="s1">getItem(position).isEnabled(); 
+    } 
+ 
+ 
+    </span><span class="s0">private static class </span><span class="s1">NavMenuItemHolder { 
+        </span><span class="s0">private </span><span class="s1">TextView labelView; 
+        </span><span class="s0">private </span><span class="s1">ImageView iconView; 
+    } 
+    </span><span class="s0">private  static class </span><span class="s1">NavProfileHolder { 
+        </span><span class="s0">private </span><span class="s1">TextView labelView; 
+        </span><span class="s0">private </span><span class="s1">ImageView iconView; 
+    } 
+    </span><span class="s0">private class </span><span class="s1">NavMenuSectionHolder { 
+        </span><span class="s0">private </span><span class="s1">TextView labelView; 
+    } 
+} 
+</span></pre>
+</body>
+</html>
