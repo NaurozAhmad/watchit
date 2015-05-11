@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>AbstractNavDrawerActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+AbstractNavDrawerActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">mmstreaming.mmstreaming; 
+ 
+</span><span class="s0">import </span><span class="s1">android.content.res.Configuration; 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.support.v4.app.ActionBarDrawerToggle; 
+</span><span class="s0">import </span><span class="s1">android.support.v4.app.FragmentActivity; 
+</span><span class="s0">import </span><span class="s1">android.support.v4.view.GravityCompat; 
+</span><span class="s0">import </span><span class="s1">android.support.v4.widget.DrawerLayout; 
+</span><span class="s0">import </span><span class="s1">android.view.KeyEvent; 
+</span><span class="s0">import </span><span class="s1">android.view.Menu; 
+</span><span class="s0">import </span><span class="s1">android.view.MenuItem; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.widget.AdapterView; 
+</span><span class="s0">import </span><span class="s1">android.widget.ListView; 
+ 
+ 
+</span><span class="s2">/** 
+ * Created by Ammo on 5/2/2015. 
+ */</span><span class="s1"> 
+</span><span class="s0">public abstract class </span><span class="s1">AbstractNavDrawerActivity </span><span class="s0">extends </span><span class="s1">FragmentActivity { 
+    </span><span class="s0">private </span><span class="s1">DrawerLayout mDrawerLayout; 
+    </span><span class="s0">private </span><span class="s1">ActionBarDrawerToggle mDrawerToggle; 
+ 
+    </span><span class="s0">private </span><span class="s1">ListView mDrawerList; 
+ 
+    </span><span class="s0">private </span><span class="s1">CharSequence mDrawerTitle; 
+    </span><span class="s0">private </span><span class="s1">CharSequence mTitle; 
+ 
+    </span><span class="s0">private <a href="NavDrawerActivityConfiguration.java.html">NavDrawerActivityConfiguration</a> </span><span class="s1">navConf ; 
+ 
+    </span><span class="s0">protected abstract <a href="NavDrawerActivityConfiguration.java.html">NavDrawerActivityConfiguration</a> </span><span class="s1">getNavDrawerConfiguration(); 
+ 
+    </span><span class="s0">protected abstract void </span><span class="s1">onNavItemSelected( </span><span class="s0">int </span><span class="s1">id ); 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+ 
+        navConf = getNavDrawerConfiguration(); 
+ 
+        setContentView(navConf.getMainLayout()); 
+ 
+        mTitle = mDrawerTitle = getTitle(); 
+ 
+        mDrawerLayout = (DrawerLayout) findViewById(navConf.getDrawerLayoutId()); 
+        mDrawerList = (ListView) findViewById(navConf.getLeftDrawerId()); 
+        mDrawerList.setAdapter(navConf.getBaseAdapter()); 
+        mDrawerList.setOnItemClickListener(</span><span class="s0">new </span><span class="s1">DrawerItemClickListener()); 
+ 
+        </span><span class="s0">this</span><span class="s1">.initDrawerShadow(); 
+ 
+        getActionBar().setDisplayHomeAsUpEnabled(</span><span class="s0">true</span><span class="s1">); 
+        getActionBar().setHomeButtonEnabled(</span><span class="s0">true</span><span class="s1">); 
+ 
+        mDrawerToggle = </span><span class="s0">new </span><span class="s1">ActionBarDrawerToggle( 
+                </span><span class="s0">this</span><span class="s1">, 
+                mDrawerLayout, 
+                getDrawerIcon(), 
+                navConf.getDrawerOpenDesc(), 
+                navConf.getDrawerCloseDesc() 
+        ) { 
+            </span><span class="s0">public void </span><span class="s1">onDrawerClosed(View view) { 
+                getActionBar().setTitle(mTitle); 
+                invalidateOptionsMenu(); 
+            } 
+ 
+            </span><span class="s0">public void </span><span class="s1">onDrawerOpened(View drawerView) { 
+                getActionBar().setTitle(mDrawerTitle); 
+                invalidateOptionsMenu(); 
+            } 
+        }; 
+        mDrawerLayout.setDrawerListener(mDrawerToggle); 
+    } 
+ 
+    </span><span class="s0">protected void </span><span class="s1">initDrawerShadow() { 
+        mDrawerLayout.setDrawerShadow(navConf.getDrawerShadow(), GravityCompat.START); 
+    } 
+ 
+    </span><span class="s0">protected int </span><span class="s1">getDrawerIcon() { 
+        </span><span class="s0">return </span><span class="s1">R.drawable.ic_drawer; 
+    } 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onPostCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onPostCreate(savedInstanceState); 
+        mDrawerToggle.syncState(); 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">onConfigurationChanged(Configuration newConfig) { 
+        </span><span class="s0">super</span><span class="s1">.onConfigurationChanged(newConfig); 
+        mDrawerToggle.onConfigurationChanged(newConfig); 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onPrepareOptionsMenu(Menu menu) { 
+        </span><span class="s0">if </span><span class="s1">( navConf.getActionMenuItemsToHideWhenDrawerOpen() != </span><span class="s0">null </span><span class="s1">) { 
+            </span><span class="s0">boolean </span><span class="s1">drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList); 
+            </span><span class="s0">for</span><span class="s1">( </span><span class="s0">int </span><span class="s1">iItem : navConf.getActionMenuItemsToHideWhenDrawerOpen()) { 
+                menu.findItem(iItem).setVisible(!drawerOpen); 
+            } 
+        } 
+        </span><span class="s0">return super</span><span class="s1">.onPrepareOptionsMenu(menu); 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onOptionsItemSelected(MenuItem item) { 
+        </span><span class="s0">if </span><span class="s1">(mDrawerToggle.onOptionsItemSelected(item)) { 
+            </span><span class="s0">return true</span><span class="s1">; 
+        } 
+        </span><span class="s0">else </span><span class="s1">{ 
+            </span><span class="s0">return false</span><span class="s1">; 
+        } 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onKeyDown(</span><span class="s0">int </span><span class="s1">keyCode, KeyEvent event) { 
+        </span><span class="s0">if </span><span class="s1">( keyCode == KeyEvent.KEYCODE_MENU ) { 
+            </span><span class="s0">if </span><span class="s1">( </span><span class="s0">this</span><span class="s1">.mDrawerLayout.isDrawerOpen(</span><span class="s0">this</span><span class="s1">.mDrawerList)) { 
+                </span><span class="s0">this</span><span class="s1">.mDrawerLayout.closeDrawer(</span><span class="s0">this</span><span class="s1">.mDrawerList); 
+            } 
+            </span><span class="s0">else </span><span class="s1">{ 
+                </span><span class="s0">this</span><span class="s1">.mDrawerLayout.openDrawer(</span><span class="s0">this</span><span class="s1">.mDrawerList); 
+            } 
+            </span><span class="s0">return true</span><span class="s1">; 
+        } 
+        </span><span class="s0">return super</span><span class="s1">.onKeyDown(keyCode, event); 
+    } 
+ 
+    </span><span class="s0">protected </span><span class="s1">DrawerLayout getDrawerLayout() { 
+        </span><span class="s0">return </span><span class="s1">mDrawerLayout; 
+    } 
+ 
+    </span><span class="s0">protected </span><span class="s1">ActionBarDrawerToggle getDrawerToggle() { 
+        </span><span class="s0">return </span><span class="s1">mDrawerToggle; 
+    } 
+ 
+    </span><span class="s0">private class </span><span class="s1">DrawerItemClickListener </span><span class="s0">implements </span><span class="s1">ListView.OnItemClickListener { 
+        @Override 
+        </span><span class="s0">public void </span><span class="s1">onItemClick(AdapterView&lt;?&gt; parent, View view, </span><span class="s0">int </span><span class="s1">position, </span><span class="s0">long </span><span class="s1">id) { 
+            selectItem(position); 
+        } 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">selectItem(</span><span class="s0">int </span><span class="s1">position) { 
+        <a href="NavDrawerItem.java.html">NavDrawerItem</a> selectedItem = navConf.getNavItems()[position]; 
+ 
+        </span><span class="s0">this</span><span class="s1">.onNavItemSelected(selectedItem.getId()); 
+        mDrawerList.setItemChecked(position, </span><span class="s0">true</span><span class="s1">); 
+ 
+        </span><span class="s0">if </span><span class="s1">( selectedItem.updateActionBarTitle()) { 
+            setTitle(selectedItem.getLabel()); 
+        } 
+ 
+        </span><span class="s0">if </span><span class="s1">( </span><span class="s0">this</span><span class="s1">.mDrawerLayout.isDrawerOpen(</span><span class="s0">this</span><span class="s1">.mDrawerList)) { 
+            mDrawerLayout.closeDrawer(mDrawerList); 
+        } 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">setTitle(CharSequence title) { 
+        mTitle = title; 
+        getActionBar().setTitle(mTitle); 
+    } 
+} 
+</span></pre>
+</body>
+</html>

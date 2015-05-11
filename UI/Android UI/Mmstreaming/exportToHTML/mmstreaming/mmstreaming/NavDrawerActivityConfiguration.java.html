@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>NavDrawerActivityConfiguration.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+NavDrawerActivityConfiguration.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">package </span><span class="s1">mmstreaming.mmstreaming; 
+ 
+</span><span class="s0">import </span><span class="s1">android.widget.BaseAdapter; 
+ 
+</span><span class="s2">/** 
+ * Created by Ammo on 5/2/2015. 
+ */</span><span class="s1"> 
+</span><span class="s0">public class </span><span class="s1">NavDrawerActivityConfiguration { 
+    </span><span class="s0">private int </span><span class="s1">mainLayout; 
+    </span><span class="s0">private int </span><span class="s1">drawerShadow; 
+    </span><span class="s0">private int </span><span class="s1">drawerLayoutId; 
+    </span><span class="s0">private int </span><span class="s1">leftDrawerId; 
+    </span><span class="s0">private int</span><span class="s1">[] actionMenuItemsToHideWhenDrawerOpen; 
+    </span><span class="s0">private <a href="NavDrawerItem.java.html">NavDrawerItem</a></span><span class="s1">[] navItems; 
+    </span><span class="s0">private int </span><span class="s1">drawerOpenDesc; 
+    </span><span class="s0">private int </span><span class="s1">drawerCloseDesc; 
+    </span><span class="s0">private </span><span class="s1">BaseAdapter baseAdapter; 
+ 
+    </span><span class="s0">public int </span><span class="s1">getMainLayout() { 
+        </span><span class="s0">return </span><span class="s1">mainLayout; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setMainLayout(</span><span class="s0">int </span><span class="s1">mainLayout) { 
+        </span><span class="s0">this</span><span class="s1">.mainLayout = mainLayout; 
+    } 
+ 
+    </span><span class="s0">public int </span><span class="s1">getDrawerShadow() { 
+        </span><span class="s0">return </span><span class="s1">drawerShadow; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setDrawerShadow(</span><span class="s0">int </span><span class="s1">drawerShadow) { 
+        </span><span class="s0">this</span><span class="s1">.drawerShadow = drawerShadow; 
+    } 
+ 
+    </span><span class="s0">public int </span><span class="s1">getDrawerLayoutId() { 
+        </span><span class="s0">return </span><span class="s1">drawerLayoutId; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setDrawerLayoutId(</span><span class="s0">int </span><span class="s1">drawerLayoutId) { 
+        </span><span class="s0">this</span><span class="s1">.drawerLayoutId = drawerLayoutId; 
+    } 
+ 
+    </span><span class="s0">public int </span><span class="s1">getLeftDrawerId() { 
+        </span><span class="s0">return </span><span class="s1">leftDrawerId; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setLeftDrawerId(</span><span class="s0">int </span><span class="s1">leftDrawerId) { 
+        </span><span class="s0">this</span><span class="s1">.leftDrawerId = leftDrawerId; 
+    } 
+ 
+    </span><span class="s0">public int</span><span class="s1">[] getActionMenuItemsToHideWhenDrawerOpen() { 
+        </span><span class="s0">return </span><span class="s1">actionMenuItemsToHideWhenDrawerOpen; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setActionMenuItemsToHideWhenDrawerOpen( </span><span class="s0">int</span><span class="s1">[] actionMenuItemsToHideWhenDrawerOpen) { 
+        </span><span class="s0">this</span><span class="s1">.actionMenuItemsToHideWhenDrawerOpen = actionMenuItemsToHideWhenDrawerOpen; 
+    } 
+ 
+    </span><span class="s0">public <a href="NavDrawerItem.java.html">NavDrawerItem</a></span><span class="s1">[] getNavItems() { 
+        </span><span class="s0">return </span><span class="s1">navItems; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setNavItems(<a href="NavDrawerItem.java.html">NavDrawerItem</a>[] navItems) { 
+        </span><span class="s0">this</span><span class="s1">.navItems = navItems; 
+    } 
+ 
+    </span><span class="s0">public int </span><span class="s1">getDrawerOpenDesc() { 
+        </span><span class="s0">return </span><span class="s1">drawerOpenDesc; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setDrawerOpenDesc(</span><span class="s0">int </span><span class="s1">drawerOpenDesc) { 
+        </span><span class="s0">this</span><span class="s1">.drawerOpenDesc = drawerOpenDesc; 
+    } 
+ 
+    </span><span class="s0">public int </span><span class="s1">getDrawerCloseDesc() { 
+        </span><span class="s0">return </span><span class="s1">drawerCloseDesc; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setDrawerCloseDesc(</span><span class="s0">int </span><span class="s1">drawerCloseDesc) { 
+        </span><span class="s0">this</span><span class="s1">.drawerCloseDesc = drawerCloseDesc; 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">BaseAdapter getBaseAdapter() { 
+        </span><span class="s0">return </span><span class="s1">baseAdapter; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setBaseAdapter(BaseAdapter baseAdapter) { 
+        </span><span class="s0">this</span><span class="s1">.baseAdapter = baseAdapter; 
+    } 
+} 
+</span></pre>
+</body>
+</html>
