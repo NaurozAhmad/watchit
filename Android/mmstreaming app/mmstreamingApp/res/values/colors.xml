@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="black_overlay">#66000000</color>
-
+    <color name="purple_light">#a592dbda</color>
+    <color name="purple_middle">#92dbda</color>
+    <color name="purple_dark">#ff88d2d1</color>
 </resources>

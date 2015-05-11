@@ -5,13 +5,18 @@
     android:background="@drawable/c"
     tools:context=".ContentView" >
 
-    
-    <VideoView
-        android:id="@+id/videoView1"
-        android:layout_width="wrap_content"
+    <LinearLayout 
+        android:layout_width="match_parent"
         android:layout_height="170dp"
+        android:id="@+id/videoView1"
+        >
+        <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView1"

@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.iqbal"
+    package="com.example.mmstreamingapp"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="17" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+    
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/logo11"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.MyAppTheme" >
         <activity
-            android:name="com.example.iqbal.MainActivity"
+            android:name="com.example.mmstreamingapp.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.iqbal.Contentview"
+            android:name="com.example.mmstreamingapp.Contentview"
             android:label="@string/title_activity_content_view" >
         </activity>
         <activity
-            android:name="com.example.iqbal.Splash"
+            android:name="com.example.mmstreamingapp.Splash"
             android:label="@string/title_activity_splash"
             android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.iqbal.Log_in"
+            android:name="com.example.mmstreamingapp.Log_in"
             android:label="@string/title_activity_log_in" >
         </activity>
         <activity
-            android:name="com.example.iqbal.Forgot_Password"
+            android:name="com.example.mmstreamingapp.Forgot_Password"
             android:label="@string/title_activity_forgot__password" >
         </activity>
+        
+        
+        
+        
     </application>
 
 </manifest>
